@@ -82,7 +82,7 @@ jobs:
       with:
         name: code
         path: .
-              - name: Build Image
+    - name: Build Image
         env:
           GIT_COMMIT: "GA-${{github.sha}}"
         run: | 
