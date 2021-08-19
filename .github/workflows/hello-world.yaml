@@ -20,10 +20,10 @@ jobs:
     container: gradle:6-jdk11
     steps:
       - name: Download Repo
-          uses: actions/download-artifact@v2
-          with:
-            name: code
-            path: .
+        uses: actions/download-artifact@v2
+        with:
+          name: code
+          path: .
       - name: Test
         run: ci/unit-test-app.sh
   Build:
@@ -31,17 +31,17 @@ jobs:
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
     steps:
-        - name: Download Repo
-          uses: actions/download-artifact@v2
-          with:
-            name: code
-            path: .
-        - name: my-step
-          run: chmod +x ci/build-app.sh
-        - name: Upload Repo
-          uses: actions/upload-artifact@v2
-          with:
-            name: code
-            path: .
+      - name: Download Repo
+        uses: actions/download-artifact@v2
+        with:
+          name: code
+          path: .
+      - name: my-step
+        run: chmod +x ci/build-app.sh
+      - name: Upload Repo
+        uses: actions/upload-artifact@v2
+        with:
+          name: code
+          path: .
 
 
