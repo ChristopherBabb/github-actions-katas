@@ -83,7 +83,7 @@ jobs:
         name: code
         path: .
     - name: Build Image
-        env:
+      env:
           GIT_COMMIT: "GA-${{github.sha}}"
         run: | 
           chmod +x ci/build-docker.sh
