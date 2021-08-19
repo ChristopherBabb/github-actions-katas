@@ -85,15 +85,15 @@ jobs:
     - name: Build Image
       env:
         GIT_COMMIT: "GA-${{github.sha}}"
-        run: | 
-          chmod +x ci/build-docker.sh
-          ci/build-docker.sh
+      run: | 
+        chmod +x ci/build-docker.sh
+        ci/build-docker.sh
     - name: Push Image
       env:
         GIT_COMMIT: "GA-${{github.sha}}"
-        run: | 
-          chmod +x ci/push-docker.sh
-          ci/push-docker.sh
+      run: | 
+        chmod +x ci/push-docker.sh
+        ci/push-docker.sh
     - name: build
       run: |
         chmod +x ci/component-test.sh
